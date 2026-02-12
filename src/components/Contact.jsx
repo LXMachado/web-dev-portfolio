@@ -200,7 +200,7 @@ const Contact = () => {
                   />
                 </svg>
               </span>
-              <span className="contact-text">Miami, Queensland, Australia</span>
+              <span className="contact-text">Remote · Available worldwide</span>
             </p>
 
             <p className="contact-detail">
@@ -471,7 +471,7 @@ const Contact = () => {
         </div>
       </motion.div>
       <div className="flex items-center justify-center pt-12 text-sm text-slate-500 lg:text-base dark:text-ink-muted">
-        <h1>© 2024 Alexandre Machado. All rights reserved.</h1>
+        <h1>© 2026 Alexandre Machado. All rights reserved.</h1>
       </div>
     </motion.section>
   )

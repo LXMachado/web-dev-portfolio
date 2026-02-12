@@ -4,17 +4,21 @@ import LogoClouds from "./components/LogoClouds"
 import NavBar from "./components/NavBar"
 import Services from "./components/Services"
 import Projects from "./components/Projects"
-{/* import Testimonial from "./components/Testimonial" */}
+import Pricing from "./components/Pricing"
+import Process from "./components/Process"
+import Cta from "./components/Cta"
 
 function App() {
   return (
     <div className="p-2 md:px-10">
       <NavBar />
       <Hero />
-       <Services />
+      <Services />
+      <Pricing />
+      <Process />
       <Projects />
       <LogoClouds />
-      {/* <Testimonial /> */}
+      <Cta />
       <Contact />
     </div>
   )

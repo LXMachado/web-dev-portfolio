@@ -189,4 +189,48 @@
   .contact-text {
     @apply text-base text-slate-800 sm:text-lg dark:text-ink;
   }
+
+  .stat-pill {
+    @apply inline-flex items-center rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 shadow-[0_15px_30px_-25px_rgba(15,23,42,0.45)] dark:border-surface-border dark:bg-surface-elevated/70 dark:text-ink-muted;
+  }
+
+  .pricing-card {
+    @apply surface flex h-full flex-col justify-between gap-6;
+  }
+
+  .pricing-card.is-featured {
+    @apply border-sky-300/60 shadow-[0_45px_85px_-55px_rgba(14,165,233,0.55)] dark:border-accent/50 dark:shadow-glow;
+  }
+
+  .pricing-badge {
+    @apply rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-sky-600 dark:bg-accent/15 dark:text-accent;
+  }
+
+  .pricing-item {
+    @apply flex items-start gap-3 text-sm text-slate-600 dark:text-ink-muted/90;
+  }
+
+  .pricing-dot {
+    @apply mt-1.5 h-2 w-2 rounded-full bg-sky-400 dark:bg-accent;
+  }
+
+  .process-card {
+    @apply surface flex h-full flex-col gap-3;
+  }
+
+  .process-index {
+    @apply text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-ink-muted;
+  }
+
+  .case-card {
+    @apply surface flex h-full flex-col justify-between gap-6 text-left;
+  }
+
+  .case-label {
+    @apply font-semibold text-slate-800 dark:text-ink;
+  }
+
+  .cta-panel {
+    @apply surface flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center;
+  }
 }

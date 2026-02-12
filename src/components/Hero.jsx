@@ -11,10 +11,10 @@ const Hero = () => {
     setIsClient(true)
   }, [])
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById("contact")
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" })
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id)
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
     }
   }
 
@@ -72,22 +72,22 @@ const Hero = () => {
           variants={itemVariants}
         >
           <motion.span
-            className="inline-flex items-center rounded-full border border-slate-200 px-5 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-slate-500 dark:border-white/10 dark:text-ink/60"
+            className="hero-kicker"
             variants={itemVariants}
           >
-            Full-stack developer · product-minded engineer
+            Product-ready websites & web apps
           </motion.span>
           <motion.h1
             className="text-5xl font-heading font-semibold leading-[1.05] tracking-tight text-slate-900 sm:text-6xl lg:text-[4.25rem] lg:leading-[1.05] xl:text-[4.75rem] dark:text-ink"
             variants={itemVariants}
           >
-            Hello! I'm Alexandre,
+            I build digital experiences that turn visitors into clients.
           </motion.h1>
           <motion.p
             className="max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl sm:leading-[1.9] dark:text-ink/75"
             variants={itemVariants}
           >
-            a full-stack web developer focused on crafting intuitive, high-performing digital products. I translate complex ideas into elegant solutions, partnering with teams to launch, iterate, and scale with confidence.
+            I help businesses ship fast, high-performing websites and web apps. Clear scope, clear pricing, and delivery you can count on.
           </motion.p>
           <motion.div
             className="flex flex-wrap gap-4"
@@ -98,21 +98,25 @@ const Hero = () => {
               variants={itemVariants}
               whileHover={shouldReduceMotion ? {} : { scale: 1.03 }}
               whileTap={shouldReduceMotion ? {} : { scale: 0.97 }}
-              onClick={scrollToContact}
+              onClick={() => scrollToSection("pricing")}
             >
-              Let's Talk
+              Start a project
             </motion.button>
-            <motion.a
-              href="https://docs.google.com/document/d/1j0EnYcWyKMXBfziO7Z2yv-8NPur2GTBrzO2n0O_C2DM/edit?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full border-2 border-slate-300 px-8 py-3.5 text-base font-semibold text-slate-700 transition hover:border-sky-400 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300 dark:border-white/30 dark:text-ink/80 dark:hover:border-white/60 dark:hover:text-ink dark:focus-visible:outline-white/40"
+            <motion.button
+              type="button"
+              className="button-secondary"
               variants={itemVariants}
               whileHover={shouldReduceMotion ? {} : { scale: 1.03 }}
               whileTap={shouldReduceMotion ? {} : { scale: 0.97 }}
+              onClick={() => scrollToSection("projects")}
             >
-              Download my CV
-            </motion.a>
+              View case studies
+            </motion.button>
+          </motion.div>
+          <motion.div className="flex flex-wrap gap-3" variants={itemVariants}>
+            <span className="stat-pill">Full-stack delivery</span>
+            <span className="stat-pill">Fast turnaround</span>
+            <span className="stat-pill">Clear communication</span>
           </motion.div>
         </motion.div>
         {isClient && (

@@ -1,92 +1,59 @@
-import React, { useState } from "react"
+import React from "react"
 
 const services = [
   {
-    name: "Full-Stack Web Development",
-    icon: "../../images/icons/digitalmarketing.png",
+    title: "High-converting marketing sites",
     description:
-      "Delivering complete web solutions that integrate both front-end interfaces and back-end server functionality. I build responsive, scalable websites that provide seamless user experiences and robust back-end systems.",
+      "Launch a polished site that clarifies your offer, builds trust, and turns visitors into leads.",
   },
   {
-    name: "Custom Front-End Development",
-    icon: "../../images/icons/webdevelopment.png",
+    title: "Product-ready web apps",
     description:
-      "Specializing in creating dynamic, user-friendly interfaces using modern technologies like React. I ensure your website is visually appealing, highly responsive, and optimized for performance across all devices.",
+      "From dashboards to portals, I build reliable frontends and APIs that grow with your business.",
   },
   {
-    name: "Scalable Back-End Development",
-    icon: "../../images/icons/socialmedia.png",
+    title: "Automations + integrations",
     description:
-      "Engineering powerful server-side applications and APIs. Using technologies like Node.js and Express, I develop secure, scalable, and efficient back-end systems that support your business needs.",
+      "Connect tools, APIs, and workflows to save time and keep data flowing across your stack.",
   },
   {
-    name: "Reliable Hosting & Domain Services",
-    icon: "../../images/icons/appdevelopment.png",
+    title: "Ongoing improvements",
     description:
-      "Providing fast, reliable hosting solutions with excellent uptime. I help you find the perfect domain and ensure your website is always accessible and performing optimally for your audience.",
-  },
-  {
-    name: "On-Page SEO Optimization",
-    icon: "../../images/icons/videoediting.png",
-    description:
-      "Enhancing your website's visibility with on-page SEO best practices. I optimize content, meta tags, images, and structure to improve your search engine rankings and drive more organic traffic to your site.",
-  },
-  {
-    name: "Ongoing Maintenance & Support",
-    icon: "../../images/icons/consulting.png",
-    description:
-      "Offering continuous support and maintenance to keep your website running smoothly. From fixing bugs to updating content and adding new features, I ensure your site remains secure, up-to-date, and optimized for performance.",
+      "Monthly iteration, performance tuning, and new features so your product never stalls.",
   },
 ]
 
-
 const Services = () => {
-  const [visibleServices, setVisibleServices] = useState(3)
-
-  const handleServiceClick = () => {
-    const contactSection = document.getElementById('contact')
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' })
+  const handleClick = () => {
+    const section = document.getElementById("pricing")
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
     }
-  }
-
-  const loadMore = () => {
-    setVisibleServices(prev => Math.min(prev + 3, services.length))
   }
 
   return (
     <section id="services" className="section-shell">
       <div className="section-header">
-        <h2 className="section-title">Services</h2>
-        <p className="section-subtitle">My comprehensive range of services</p>
+        <h2 className="section-title">Services built for outcomes</h2>
+        <p className="section-subtitle">
+          I help founders, teams, and growing businesses ship digital work that sells, scales, and stays reliable.
+        </p>
       </div>
-      <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {services.slice(0, visibleServices).map((item, index) => (
-          <div
-            key={index}
-            className="service-card group"
-            onClick={handleServiceClick}
-          >
-            <div className="flex items-start gap-4">
-              <span className="service-icon">
-                <img className="h-8 w-8 object-contain" src={item.icon} alt={item.name} loading="lazy" />
-              </span>
-              <div>
-                <h3 className="text-lg font-heading font-semibold text-slate-900 sm:text-xl dark:text-ink">{item.name}</h3>
-                <p className="mt-4 text-base leading-7 text-slate-600 dark:text-ink-muted/90">{item.description}</p>
-              </div>
+      <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
+        {services.map((service, index) => (
+          <div key={index} className="service-card" onClick={handleClick}>
+            <div>
+              <h3 className="text-xl font-heading font-semibold text-slate-900 dark:text-ink">
+                {service.title}
+              </h3>
+              <p className="mt-4 text-base leading-7 text-slate-600 dark:text-ink-muted/90">
+                {service.description}
+              </p>
             </div>
-            <span className="service-cta">Discuss this service →</span>
+            <span className="service-cta">See what this includes →</span>
           </div>
         ))}
       </div>
-      {visibleServices < services.length && (
-        <div className="mt-8 flex justify-center">
-          <button onClick={loadMore} className="button-secondary">
-            Load More
-          </button>
-        </div>
-      )}
     </section>
   )
 }

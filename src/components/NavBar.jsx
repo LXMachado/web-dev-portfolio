@@ -4,6 +4,8 @@ import { useTheme } from "react-hook-theme"
 const navigation = [
   { name: "Home", href: "#hero" },
   { name: "Services", href: "#services" },
+  { name: "Pricing", href: "#pricing" },
+  { name: "Process", href: "#process" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ]
@@ -42,8 +44,8 @@ const NavBar = () => {
       }
     }
 
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
   }, [])
 
   const handleNavClick = (e, item) => {
@@ -54,7 +56,7 @@ const NavBar = () => {
     if (item.name === "Home") {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: "smooth",
       })
     } else {
       const element = document.querySelector(item.href)
@@ -65,7 +67,7 @@ const NavBar = () => {
 
         window.scrollTo({
           top: offsetPosition,
-          behavior: 'smooth'
+          behavior: "smooth",
         })
       }
     }
@@ -75,10 +77,14 @@ const NavBar = () => {
     <header className="sticky top-0 z-50 flex justify-center px-4 pb-4 pt-6">
       <nav ref={navRef} className="nav-shell" aria-label="Primary navigation">
         <div className="flex items-center gap-4">
-          <img src="/images/img/AM.png" alt="Brand Logo" className="nav-logo" />
+          <img src="/images/img/AM.png" alt="Alexandre Machado logo" className="nav-logo" />
           <div className="flex flex-col">
-            <span className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500 dark:text-ink-muted">Portfolio</span>
-            <h1 className="font-heading text-lg font-semibold text-slate-900 dark:text-ink">Alexandre Machado</h1>
+            <span className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-ink-muted">
+              Web developer
+            </span>
+            <h1 className="font-heading text-lg font-semibold text-slate-900 dark:text-ink">
+              Alexandre Machado
+            </h1>
           </div>
         </div>
         <div className="hidden items-center gap-1 lg:flex">
@@ -86,7 +92,7 @@ const NavBar = () => {
             <a
               key={item.name}
               href={item.href}
-              className={`nav-link ${active === item.name ? 'is-active' : ''}`}
+              className={`nav-link ${active === item.name ? "is-active" : ""}`}
               onClick={(e) => handleNavClick(e, item)}
             >
               {item.name}
@@ -94,7 +100,7 @@ const NavBar = () => {
           ))}
         </div>
         <div className="flex items-center gap-2">
-          <label className={`theme-toggle ${isDark ? 'is-dark' : ''}`}>
+          <label className={`theme-toggle ${isDark ? "is-dark" : ""}`}>
             <input
               type="checkbox"
               className="theme-toggle-input"
@@ -170,7 +176,7 @@ const NavBar = () => {
             <a
               key={item.name}
               href={item.href}
-              className={`mobile-link ${active === item.name ? 'is-active' : ''}`}
+              className={`mobile-link ${active === item.name ? "is-active" : ""}`}
               onClick={(e) => handleNavClick(e, item)}
             >
               {item.name}
