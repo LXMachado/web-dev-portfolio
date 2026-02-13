@@ -3,7 +3,7 @@ import React from "react"
 const tiers = [
   {
     name: "Starter Web Presence",
-    price: "From $400",
+    price: "From $400 AUD",
     description: "Best for lean teams who need a polished, conversion-ready marketing site.",
     highlights: [
       "Up to 5 core sections",
@@ -14,7 +14,7 @@ const tiers = [
   },
   {
     name: "Professional Web App",
-    price: "From $1,800",
+    price: "From $1,800 AUD",
     description: "Ideal for service businesses and product teams who need workflows and data.",
     highlights: [
       "Frontend + backend build",
@@ -26,7 +26,7 @@ const tiers = [
   },
   {
     name: "Custom Systems",
-    price: "From $3,500",
+    price: "From $3,500 AUD",
     description: "For complex products, automation, and multi-system integrations.",
     highlights: [
       "Discovery + architecture",
