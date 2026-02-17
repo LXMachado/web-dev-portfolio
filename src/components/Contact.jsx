@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { fadeIn, staggerContainer } from "../utils/motion"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -155,27 +153,14 @@ const Contact = () => {
   }
 
   return (
-    <motion.section
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
-      id="contact"
-      className="section-shell"
-    >
-      <motion.div
-        variants={fadeIn("up", "tween", 0.2, 1)}
-        className="section-header"
-      >
+    <section id="contact" className="section-shell">
+      <div className="section-header">
         <h1 className="section-title">Get in touch</h1>
         <span className="section-subtitle">
           Contact me now and scale your business
         </span>
-      </motion.div>
-      <motion.div
-        variants={fadeIn("up", "tween", 0.2, 1)}
-        className="mx-auto mt-12 flex w-full max-w-6xl flex-col gap-12 lg:flex-row"
-      >
+      </div>
+      <div className="mx-auto mt-12 flex w-full max-w-6xl flex-col gap-12 lg:flex-row">
         <div className="flex w-full flex-1 flex-col gap-10">
           <div className="space-y-6">
             <p className="contact-detail">
@@ -313,7 +298,7 @@ const Contact = () => {
           <div className="mx-auto w-full max-w-xl">
             <h2 className="text-2xl font-heading font-semibold text-slate-900 dark:text-ink">What do you want to ask?</h2>
             <p className="mt-3 text-base leading-7 text-slate-600 dark:text-ink-muted/90">
-              Share a few details about your project or challenge and I’ll respond within 24 hours.
+              Share a few details about your project or challenge and I'll respond within 24 hours.
             </p>
             <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
               {/* Display server validation errors */}
@@ -469,11 +454,11 @@ const Contact = () => {
             </form>
           </div>
         </div>
-      </motion.div>
+      </div>
       <div className="flex items-center justify-center pt-12 text-sm text-slate-500 lg:text-base dark:text-ink-muted">
         <h1>© 2026 Alexandre Machado. All rights reserved.</h1>
       </div>
-    </motion.section>
+    </section>
   )
 }
 
