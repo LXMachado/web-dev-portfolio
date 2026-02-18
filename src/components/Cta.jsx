@@ -1,13 +1,6 @@
 import React from "react"
 
 const Cta = () => {
-  const handleClick = () => {
-    const section = document.getElementById("contact")
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
   return (
     <section className="section-shell">
       <div className="cta-panel">
@@ -19,9 +12,14 @@ const Cta = () => {
             Share a brief overview and I will respond with next steps and availability within 24 hours.
           </p>
         </div>
-        <button className="button-primary" onClick={handleClick}>
+        <a
+          href="https://calendly.com/bookings-machado/introduction"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="button-primary"
+        >
           Book a call
-        </button>
+        </a>
       </div>
     </section>
   )
